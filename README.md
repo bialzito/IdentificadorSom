@@ -28,7 +28,7 @@ Embora a divisão de trabalho do nosso grupo seja organizada, é importante dest
 - Desenvolver o sensor IoT e integrar a captura de dados acústicos com o sistema.
 
 **Luiz Otávio Machado Seles** – *IoT (Integração de Dispositivo)*  
-- Responsável pela integração do dispositivo IoT com o sistema de identificação de sons, garantindo a comunicação eficiente entre eles.
+-	Responsável pelo armazenamento dos dados e pelo envio ao backend.
 
 **Pedro Azevedo Batista (Piphoka)** – *Apresentação, Pesquisa Teórica e Integração*  
 - Realizar pesquisa teórica sobre características dos sons (como brilho, textura, etc.) e coordenar a apresentação que os integrantes farão do projeto.
