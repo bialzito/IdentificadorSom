@@ -62,17 +62,24 @@ python treinador_svm.py
 
 ## 👥 Equipe
 
-| Integrante | Função | Responsabilidades |
-|-------------|--------|-------------------|
-| **Denival Biotto Filho** | Back End | Desenvolvimento principal do código e integração. |
-| **Filipe Gomes Ferreira** | Back End | Processamento de áudio e testes. |
-| **Filipy Tavares dos Santos** | Front End (HTML) | Estrutura da interface básica. |
-| **Naum Calebe Félix Sarti** | Front End (Design) | Design visual do sistema. |
-| **Luan Vitor Pereira Rocha** | IoT (Sensores) | Desenvolvimento do sensor acústico. |
-| **Luiz Otávio Machado Seles** | IoT (Integração) | Comunicação entre sensores e backend. |
-| **Pedro Azevedo Batista (Piphoka)** | Pesquisa / Apresentação | Pesquisa teórica e organização da apresentação. |
-| **Rafael Magesto** | Modelo 3D | Criação do modelo físico do dispositivo. |
-| **Luis Henrique da Silva** | Dados | Coleta e organização dos áudios. |
+## 👥 Divisão de Trabalho
+
+Embora a divisão de trabalho do nosso grupo seja organizada, é importante destacar que não há uma separação rígida de funções entre os membros.  
+Trabalhamos de forma colaborativa e presencial, com a flexibilidade de desempenharmos várias funções conforme as demandas do projeto.  
+Essa abordagem nos permite ser mais dinâmicos e eficientes, já que todos contribuem ativamente em diversas áreas, dependendo da necessidade do momento.  
+De forma geral, entretanto, as tarefas foram divididas de acordo com a seguinte organização, que servirá como um guia para nossa execução.
+
+| Integrante | Função | Responsabilidade |
+|-------------|---------|------------------|
+| **Denival Biotto Filho** | Back End (Desenvolvimento de Código) | Desenvolver o código responsável pela identificação de sons, explorando diferentes métodos de aprendizado de máquina para melhorar a precisão do sistema. |
+| **Filipe Gomes Ferreira** | Back End (Desenvolvimento de Código) | Desenvolver o código responsável pela identificação de sons, focando em transformar o áudio em informações que o sistema possa entender e analisar. |
+| **Filipy Tavares dos Santos** | Front End (HTML) | Desenvolver a estrutura básica da interface. |
+| **Naum Calebe Félix Sarti** | Front End (Design e Interface) | Criar design gráfico e interface do usuário para uma experiência intuitiva. |
+| **Luan Vitor Pereira Rocha** | IoT (Desenvolvimento de Sensores e Coleta de Dados) | Desenvolver o sensor IoT e integrar a captura de dados acústicos com o sistema. |
+| **Luiz Otávio Machado Seles** | IoT (Integração de Dispositivo) | Responsável pelo armazenamento dos dados e pelo envio ao backend. |
+| **Pedro Azevedo Batista (Piphoka)** | Apresentação, Pesquisa Teórica e Integração | Realizar pesquisa teórica sobre características dos sons (como brilho, textura, etc.) e coordenar a apresentação que os integrantes farão do projeto. |
+| **Rafael Magesto** | Modelo 3D do IoT | Desenvolver o modelo 3D do dispositivo IoT utilizado no projeto. |
+| **Luis Henrique da Silva** | Dados | Coletar dados de áudio e construir uma base de dados para o desenvolvimento e aprimoramento do sistema. |
 
 ---
 
