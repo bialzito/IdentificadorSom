@@ -1,49 +1,106 @@
-# Classificador de Sons com IA
+# 🎧 Classificador de Sons com IA
+> 🚧 **Status:** Projeto em desenvolvimento — novas funcionalidades e melhorias estão sendo implementadas continuamente.
 
-Este projeto utiliza Inteligência Artificial para classificar diferentes tipos de sons. Ele é implementado em Python e usa bibliotecas como 
-**TensorFlow** e **Librosa** para o processamento de áudio e treinamento de um modelo de aprendizado de máquina.
+Projeto desenvolvido em **Python 3.13.9** para **classificar sons automaticamente** (como pássaros ou outros áudios) usando **Inteligência Artificial**.  
+O sistema utiliza **MFCCs** (Mel-Frequency Cepstral Coefficients) para extrair características do som e um **classificador SVM** para reconhecer padrões.
 
-## Objetivo
+---
 
-O objetivo deste projeto é criar um modelo de IA capaz de classificar sons a partir de arquivos de áudio, como sons de animais, instrumentos musicais ou outros tipos de sons. 
-O projeto pode ser expandido para classificar qualquer tipo de áudio com base em um conjunto de dados bem definido.
+## 🎯 Objetivo
 
-## Divisões de trabalho
+Criar um modelo de aprendizado de máquina capaz de **identificar sons diferentes** a partir de arquivos de áudio.  
+O projeto pode ser expandido para novas categorias ou sensores IoT.
 
-Embora a divisão de trabalho do nosso grupo seja organizada, é importante destacar que não há uma separação rígida de funções entre os membros. Trabalhamos de forma colaborativa e presencial, com a flexibilidade de desempenharmos várias funções conforme as demandas do projeto. Essa abordagem nos permite ser mais dinâmicos e eficientes, já que todos contribuem ativamente em diversas áreas, dependendo da necessidade do momento. De forma geral, entretanto, as tarefas foram divididas de acordo com a seguinte organização, que servirá como um guia para nossa execução.
+---
 
-**Denival Biotto Filho** – *Back End (Desenvolvimento de Código)*  
-- Desenvolver o código responsável pela identificação de sons, explorando diferentes métodos de aprendizado de máquina para melhorar a precisão do sistema.
+## ⚙️ Tecnologias Utilizadas
 
-**Filipe Gomes Ferreira** – *Back End (Desenvolvimento de Código)*  
-- Desenvolver o código responsável pela identificação de sons, focando em transformar o áudio em informações que o sistema possa entender e analisar.
+- **Python 3.13.9**  
+- **Librosa** — extração de MFCCs (características de áudio)  
+- **SoundFile** — leitura e gravação de arquivos `.wav`  
+- **NumPy / Pandas** — manipulação de dados  
+- **Scikit-learn** — treinamento e avaliação com SVM  
+- **Matplotlib / Seaborn** — visualização e matriz de confusão  
+- **Requests / OS** — automação e manipulação de diretórios  
 
-**Filipy Tavares dos Santos** – *Front End (HTML)*  
-- Desenvolver a estrutura básica da interface.
+---
 
-**Naum Calebe Félix Sarti** – *Front End (Design e Interface)*  
-- Criar design gráfico e interface do usuário para uma experiência intuitiva.
+## 🧠 Funcionamento do Projeto
 
-**Luan Vitor Pereira Rocha** – *IoT (Desenvolvimento de Sensores e Coleta de Dados)*  
-- Desenvolver o sensor IoT e integrar a captura de dados acústicos com o sistema.
+1. **Extração de características (MFCCs):**  
+   O script `extrator_features.py` percorre as pastas de áudio, extrai 13 coeficientes MFCC de cada som e salva em `features_passaros.csv`.
 
-**Luiz Otávio Machado Seles** – *IoT (Integração de Dispositivo)*  
--	Responsável pelo armazenamento dos dados e pelo envio ao backend.
+2. **Treinamento e avaliação:**  
+   O script `treinador_svm.py` lê o CSV, divide em treino e teste, normaliza os dados e treina um modelo **SVM**.  
+   Ao final, mostra a **acurácia** e a **matriz de confusão**.
 
-**Pedro Azevedo Batista (Piphoka)** – *Apresentação, Pesquisa Teórica e Integração*  
-- Realizar pesquisa teórica sobre características dos sons (como brilho, textura, etc.) e coordenar a apresentação que os integrantes farão do projeto.
+3. **Execução automática (opcional):**  
+   O script `rodar_no_github.py` baixa os áudios, executa a extração e depois treina o modelo automaticamente.
 
-**Rafael Magesto** – *Modelo 3D do IoT*  
-- Desenvolver o modelo 3D do dispositivo IoT utilizado no projeto.
+---
 
-**Luis Henrique da Silva** – *Dados*  
-- Coletar dados de áudio e construir uma base de dados para o desenvolvimento e aprimoramento do sistema.
+## 🧩 Instalação e Execução
 
-## Pré-requisitos
+### Instalar dependências
+```bash
+pip install -r requirements.txt
+```
 
-{A fazer}
+### Rodar o projeto
+```bash
+python rodar_no_github.py
+```
 
-Para instalar as dependências, você pode usar o `pip`:
+Ou, manualmente:
 
 ```bash
-pip install -r requirements
+python extrator_features.py
+python treinador_svm.py
+```
+
+---
+
+## 👥 Equipe
+
+| Integrante | Função | Responsabilidades |
+|-------------|--------|-------------------|
+| **Denival Biotto Filho** | Back End | Desenvolvimento principal do código e integração. |
+| **Filipe Gomes Ferreira** | Back End | Processamento de áudio e testes. |
+| **Filipy Tavares dos Santos** | Front End (HTML) | Estrutura da interface básica. |
+| **Naum Calebe Félix Sarti** | Front End (Design) | Design visual do sistema. |
+| **Luan Vitor Pereira Rocha** | IoT (Sensores) | Desenvolvimento do sensor acústico. |
+| **Luiz Otávio Machado Seles** | IoT (Integração) | Comunicação entre sensores e backend. |
+| **Pedro Azevedo Batista (Piphoka)** | Pesquisa / Apresentação | Pesquisa teórica e organização da apresentação. |
+| **Rafael Magesto** | Modelo 3D | Criação do modelo físico do dispositivo. |
+| **Luis Henrique da Silva** | Dados | Coleta e organização dos áudios. |
+
+---
+
+## 📦 Dependências (requirements.txt)
+
+```txt
+numpy==2.1.3
+pandas==2.2.3
+librosa==0.10.2.post1
+soundfile==0.12.1
+scikit-learn==1.5.2
+matplotlib==3.9.2
+seaborn==0.13.2
+requests==2.32.3
+```
+
+---
+
+## 🧾 Licença e Créditos
+
+Projeto desenvolvido para fins **educacionais e experimentais**.  
+Os áudios utilizados foram obtidos de repositórios públicos, incluindo o projeto [FilipyTav/IdentificadorSom](https://github.com/FilipyTav/IdentificadorSom).  
+Todos os direitos reservados aos autores.
+
+---
+
+## 💡 Observações
+
+- Certifique-se de estar utilizando o **Python 3.13.9**.  
+- Os scripts criam automaticamente os arquivos necessários na primeira execução.  
+- Para reproduzir resultados, mantenha o mesmo ambiente de dependências indicado acima.
