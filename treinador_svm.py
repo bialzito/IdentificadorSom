@@ -1,9 +1,9 @@
 """
 treinador_svm.py
-Versão simplificada — sem t-SNE.
-
-Treina e avalia um modelo SVM com MFCCs extraídos
-pelo 'extrator_features.py', compatível com o projetosom.py.
+----------------
+Treina e avalia um modelo SVM usando MFCCs
+gerados pelo extrator_features.py.
+Compatível com Windows, Linux e macOS.
 """
 
 import pandas as pd
@@ -14,35 +14,34 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score, confusion_matrix
+import os
 
 # ======================================
 # CONFIGURAÇÕES
 # ======================================
-ARQUIVO_ENTRADA = r"C:\Users\ninho\Desktop\codigosom\features_passaros.csv"
-MAP_LABELS = {1: "sabia", 2: "bemtevi"}  # Igual ao projetosom.py
+ARQUIVO_ENTRADA = os.path.join(os.getcwd(), "features_passaros.csv")
+MAP_LABELS = {1: "sabia", 2: "bemtevi"}
 CATEGORIAS = ["bemtevi", "sabia"]
 
 # ======================================
 # CARREGAR DADOS
 # ======================================
+if not os.path.exists(ARQUIVO_ENTRADA):
+    raise FileNotFoundError(f"Arquivo de features não encontrado: {ARQUIVO_ENTRADA}")
+
 print(f"Carregando dados de {ARQUIVO_ENTRADA}...")
 data = pd.read_csv(ARQUIVO_ENTRADA)
 
-# Filtra apenas as classes desejadas
+# Filtra apenas classes conhecidas
 data = data[data['label'].isin(MAP_LABELS.keys())].copy()
-
-# Converte labels numéricas para texto (iguais ao projetosom.py)
 data["classe_str"] = data["label"].map(MAP_LABELS)
 
-# Garante a ordem das colunas
 feature_cols = [f"mfcc_{i}" for i in range(13)]
-data = data[feature_cols + ["classe_str"]]
-
 X = data[feature_cols].values
 y = data["classe_str"].values
 
 # ======================================
-# DIVISÃO TREINO/TESTE (igual ao projetosom.py)
+# DIVISÃO TREINO/TESTE
 # ======================================
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42, stratify=y
@@ -75,4 +74,5 @@ sns.heatmap(cm, annot=True, cmap="Blues",
 plt.title("Matriz de Confusão - SVM")
 plt.xlabel("Predito")
 plt.ylabel("Real")
+plt.tight_layout()
 plt.show()
