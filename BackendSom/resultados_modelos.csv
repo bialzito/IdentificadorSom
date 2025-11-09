@@ -1,0 +1,5 @@
+Modelo,Acurácia (%),Tempo de Treino/Busca (s),Melhores Parâmetros
+SVM,97.5,7.8,"{'C': 10, 'gamma': 'scale', 'kernel': 'rbf'}"
+Random Forest,97.5,25.3,"{'criterion': 'gini', 'max_depth': 10, 'n_estimators': 200}"
+Rede Neural (MLP),97.5,15.59,"{'activation': 'relu', 'alpha': 0.0001, 'hidden_layer_sizes': (100, 100)}"
+Árvore de Decisão,88.75,1.05,"{'criterion': 'entropy', 'max_depth': None}"
